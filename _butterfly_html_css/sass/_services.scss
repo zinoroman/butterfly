@@ -1,0 +1,179 @@
+.services{
+	text-align: center;
+	a{text-decoration: none;}
+	.block-header{
+		position: relative;
+		margin-bottom: 50px;
+		&:after{
+			content: '';
+			position: absolute;
+			left: 50%;
+			top: 100%;
+			border: 2px solid $primary;
+			width: 300px;
+			margin-left: -150px;
+			margin-top: 25px;
+		}
+	}
+	&__item{
+		margin-bottom: 70px;
+	}
+	&__link{
+		display: inline-block;
+	}
+	&__img{
+		height: 75px;
+		margin-bottom: 15px;
+		overflow: hidden;
+		&:after{
+			content: '';
+			height: 100%;
+			display: inline-block;
+			vertical-align: middle;
+		}
+	}
+	&__title{
+		font-size: 20px;
+		font-weight: bold;
+		text-transform: uppercase;
+		overflow: hidden;
+		height: 50px;
+		margin-bottom: 10px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		&-wrap{
+			max-height: 50px;
+		}
+	}
+	&__content{
+		list-style-type: none;
+		font-size: 16px;
+		max-height: 76px;
+		&-wrap{
+			height: 80px;
+			display: flex;
+			flex-direction: column;
+			vertical-align: middle;
+			overflow: hidden;
+			justify-content: center;
+		}
+	}
+	&__service{
+		line-height: 20px;
+		&:before{
+			content: '';
+			display: inline-block;
+			vertical-align: middle;
+			width: 3px;
+			height: 3px;
+			margin-right: 5px;
+			border-radius: 50%;
+			background: $primaryActive;
+		}
+	}
+}
+.feedback--main{
+	&__title{
+		font-size: 20px;
+		text-align: left;
+		color: $textLight;
+	}
+}
+.servicePost{
+	&__title{
+		text-transform: none;
+	}
+	&__buttons{
+		margin-top: 80px;
+	}
+	&Page{
+		&__img-wrap{
+			margin-bottom: 40px;
+		}
+		&__content{
+			padding-bottom: 30px;
+		}
+		&__services{
+			padding-top: 50px;
+			border-top: 4px solid  $primary;
+		}
+		&__photoAlbum{
+			margin-bottom: 45px;
+		}
+	}
+}
+
+.photoAlbum{
+	&__img-wrap{
+		margin-bottom: 30px;
+	}
+}
+
+
+
+@include max-screen(1229px){
+	.servicePost{
+		&__buttons{
+			margin-top: 30px;
+		}
+		&__btn-wrap{
+			margin-bottom: 30px;
+		}
+	}
+}
+
+@include max-screen(991px){
+	.services{
+		.block-header{
+			&:after{
+				margin-top: 15px;
+			}
+		}
+		&__item{
+			margin-bottom: 30px;
+		}
+	}
+
+	.servicePost{
+		&Page{
+			&__content{
+				padding-bottom: 0;
+			}
+			&__services{
+				padding-top: 30px;
+			}
+			&__photoAlbum{
+				margin-bottom: 30px;
+			}
+		}
+	}
+
+}
+
+@include min-screen(768px){
+	.servicePost{
+		&__title{
+			margin-top: 0;
+		}
+	}
+}
+
+@include max-screen(767px){
+	.services{
+		&__item{
+			margin-bottom: 20px;
+		}
+		&__content{
+			max-height: none;
+			&-wrap{
+				height: auto;
+			}
+		}
+	}
+	.feedback--main{
+		&__title{
+			margin-bottom: 15px;
+		}
+	}
+}

@@ -1,0 +1,63 @@
+.quoteSlider{
+	border-top: 2px solid $primary;
+	padding: 70px;
+	text-align: center;
+	color: $textLight;
+	position: relative;
+	&__arrow{
+		position: absolute;
+		top: 50%;
+		margin: -32px 0 0;
+		padding: 15px;
+		border: none;
+		background-color: transparent;
+		&--prev{
+			left: 5px;
+		}
+		&--next{
+			right: 5px;
+		}
+	}
+	&__content{
+		display: inline-block;
+		text-align: left;
+	}
+	&__title{
+		font-size: 22px;
+		font-style: italic;
+	}
+	&__author{
+		font-size: 16px;
+		text-align: right;
+	}
+}
+
+@include max-screen(991px){
+	.quoteSlider{
+		&__title{
+			font-size: 20px;
+			font-style: italic;
+		}
+		&__author{
+			font-size: 15px;
+			text-align: right;
+		}
+	}
+}
+
+@include max-screen(768px){
+	.quoteSlider{
+		padding: 50px 0;
+		&__arrow{
+			display: none !important;
+		}
+		&__title{
+			font-size: 18px;
+			font-style: italic;
+		}
+		&__author{
+			font-size: 14px;
+			text-align: right;
+		}
+	}
+}

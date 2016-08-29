@@ -1,0 +1,135 @@
+.mainSlider{
+	position: relative;
+	z-index: 1;
+	&__container{
+		position: relative;
+	}
+	&__item{
+		display: block;
+		padding-top: 265px;
+		padding-bottom: 520px;
+		overflow: hidden;
+		position: relative;
+	}
+	&__img{
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+	}
+	&__header{
+		padding-top: 15px;
+		padding-bottom: 40px;
+		position: relative;
+		z-index: 1;
+		&:before, &:after{
+			content: '';
+			position: absolute;
+			z-index: -1;
+			top: 0;
+			height: 100%;
+		}
+		&:before{
+			width: 9999px;
+			right: 100%;
+			margin-right: -410px;
+			background: rgba(#fff, 0.3);
+		}
+		&:after{
+			width: 150px;
+			right: 100%;
+			margin-right: -560px;
+			background: linear-gradient(to right, rgba(#fff, 0.3) 0%, rgba(#fff, 0) 100%);
+		}
+	}
+	&__title{
+		color: #3b3833;
+		font-size: 40px;
+		line-height: 1;
+		font-weight: bold;
+	}
+	&__subtitle{
+		color: #3b3833;
+		font-size: 30px;
+		font-weight: bold;
+	}
+	&__readmore{
+		margin-top: -20px;
+		position: relative;
+		z-index: 1;
+	}
+	&__arrow{
+		position: absolute;
+		top: 320px;
+		z-index: 1;
+		border: none;
+		width: 26px;
+		height: 57px;
+		&--prev{
+			left: 50%;
+			margin-left: -585px;
+			background-position: left top;
+		}
+		&--next{
+			right: 50%;
+			margin-right: -585px;
+			background-position: right top;
+		}
+	}
+}
+
+
+
+@include max-screen(1229px){
+.mainSlider{
+	&__arrow{
+		&--prev{
+			margin-left: -470px;
+		}
+		&--next{
+			margin-right: -470px;
+		}
+	}
+}
+}
+
+
+@include max-screen(991px){
+	
+	.mainSlider{
+		&__item{
+			padding-top: 285px;
+			padding-bottom: 130px;
+		}
+		&__img{
+			background-position: center top;
+		}
+		&__arrow{
+			top: 330px;
+			&--prev{
+				margin-left: -360px;
+			}
+			&--next{
+				margin-right: -360px;
+			}
+		}
+	}
+
+}
+
+@include max-screen(767px){
+	.mainSlider{
+		&__item{
+			padding-top: 285px;
+			padding-bottom: 35px;
+		}
+		&__img{
+			background-position: 70% bottom;
+		}
+		&__arrow{display: none !important;}
+	}
+}

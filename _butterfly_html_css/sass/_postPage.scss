@@ -1,0 +1,16 @@
+.postPage{
+	&__table1{margin-bottom: 70px;}
+	&__contactForm{margin-bottom: 110px;}
+}
+@include max-screen(991px){
+	.postPage{
+		&__table1{margin-bottom: 50px;}
+		&__contactForm{margin-bottom: 50px;}
+	}
+}
+@include max-screen(767px){
+	.postPage{
+		&__contactForm{margin-bottom: 30px;}
+		&__table1{margin-bottom: 30px;}
+	}
+}

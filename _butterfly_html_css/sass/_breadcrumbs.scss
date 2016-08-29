@@ -1,0 +1,26 @@
+.breadcrumb{
+	position: relative;
+	margin: 15px 0 15px;
+	padding: 0;
+	background-color: transparent;
+  > li{
+		font-size: 12px;
+		font-style: italic;
+		> a{
+			color: #949494;
+			text-decoration: underline;
+			&:hover{text-decoration: none;}
+		}
+		& + li{
+			color: #949494;
+			font-weight: bold;
+			&:before{
+				content: '\e803';
+				font: 4px 'fontello';
+				color: #333;
+				position: relative;
+				top: -2px;
+			}
+		}
+	}
+}

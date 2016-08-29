@@ -1,0 +1,110 @@
+<!--=include include/header.html -->
+		<section class="wrapper__contactPage">
+			<div class="contactPage">
+				<div class="container">
+				
+					<ol class="breadcrumb">
+						<li><a href="#">Головна</a></li>
+						<li class="active">Контакти</li>
+					</ol>
+					
+					<header class="page-header">
+						<div class="h1">Контакти</div>
+					</header>
+
+					<div class="contactPage__content">
+						<div class="row">
+							<div class="col-sm-9 col-md-12 col-lg-11 col-lg-offset-1">
+								<div class="contacts-wrap">
+									<div class="contacts">
+										<div class="contacts__item contacts__item--address">
+											<div class="contacts__img">
+												<svg class="contacts__svg icon icon-address">
+													<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#address"></use>
+												</svg>
+											</div>
+											<div class="contacts__title">АДресА:</div>
+											<div class="contacts__content">
+												м. Рівне, вул. Буковинська, 3<br>
+												(житловий комплекс "Виговський")
+											</div>
+										</div>
+										<div class="contacts__item contacts__item--phones">
+											<div class="contacts__img">
+												<svg class="contacts__svg icon icon-phone">
+													<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#phone"></use>
+												</svg>
+											</div>
+											<div class="contacts__title">Телефоны:</div>
+											<div class="contacts__content">
+												+38 (097) 967-45-40, <br class="visible-sm">+38 (0362) 45-45-40
+											</div>
+										</div><!-- /.phones -->
+										<div class="contacts__item contacts__item--timetable">
+											<div class="contacts__img">
+												<svg class="contacts__svg icon icon-timetable">
+													<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#datepicker"></use>
+												</svg>
+											</div>
+											<div class="contacts__title">Графік роботи:</div>
+											<div class="contacts__content">
+												ПН.–СБ.: 09:00–20:00<br>
+												НД.: 09:00–14:00.
+											</div>
+										</div>
+									</div>
+								</div><!-- /.timetable -->
+							</div>
+							<div class="col-sm-15 col-md-12 col-lg-10 col-lg-offset-1">
+								<form class="feedbackForm">
+									<div class="feedbackForm__title">Отправить сообщение</div>
+									<div class="form-group form-group--light">
+										<input type="text" name="name" class="form-control form-control--light" placeholder="Имя">
+									</div>
+									<div class="form-group form-group--light">
+										<input type="email" name="email" class="form-control form-control--light" placeholder="E-mail">
+									</div>
+									<div class="form-group form-group--light">
+										<textarea name="message" class="form-control form-control--light" placeholder="Сообщение"></textarea>
+									</div>
+									<div class="form-group form-group--light">
+										<div class="captcha captcha--light">
+
+											<div class="captcha__title">Защитный код:</div>
+											<div class="captcha__content">
+												<div class="captcha__img-wrap captcha__img-wrap--light">
+													<img src="images/temp/captcha__img--light.png" alt="" class="captcha__img">
+												</div>
+												<div class="captcha__input-wrap captcha__input-wrap--light">
+													<input type="text" class="form-control form-control--light">
+												</div>
+												<div class="captcha__reload captcha__reload--light">
+													<button type="button" class="btn btn-primary btn-sm btn-block btn-reload">
+														<svg class="icon icon-reload">
+															<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reload"></use>
+														</svg>
+													</button>
+												</div>
+											</div>
+
+											<div class="captcha__info">Регистр букв для защитного кода значения не имеет</div>
+
+										</div>
+									</div>
+									<div class="form-group form-group--light">
+										<div class="feedbackForm__submit">
+											<button type="submit" class="btn btn-primary btn-lg btn-block">Надіслати</button>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div><!-- /.contactPage__content -->
+
+				</div><!-- /.container -->
+				
+				<div class="contactPage__map" id="map"></div>
+
+			</div><!-- /.contactPage -->
+		</section><!-- /.wrapper__contactPage -->
+<!--=include include/footer.html -->

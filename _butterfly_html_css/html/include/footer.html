@@ -1,0 +1,144 @@
+
+
+
+	<footer class="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-9 col-md-8">
+					<div class="footer__copyright">© 2016, Салон краси «Батерфляй»</div>
+				</div>
+				<div class="col-sm-8 col-md-8">
+					<div class="footer__socials">
+						<div class="socials">
+							<a class="socials__item" href="#" target="_blank">
+								<svg class="icon icon-socials icon-vk">
+									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#vk"></use>
+								</svg>
+							</a><a class="socials__item" href="#" target="_blank">
+								<svg class="icon icon-socials icon-fb">
+									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#fb"></use>
+								</svg>
+							</a><a class="socials__item" href="#" target="_blank">
+								<svg class="icon icon-socials icon-instagram">
+									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use>
+								</svg>
+							</a><a class="socials__item" href="#" target="_blank">
+								<svg class="icon icon-socials icon-google">
+									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#google"></use>
+								</svg>
+							</a>
+						</div>
+					</div><!-- /.footer__socials -->
+				</div>
+				<div class="col-sm-7 col-md-8">
+					<div class="footer__wedes">
+						<a target="_blank" title="Web-studio WEDES" class="wedes" href="http://www.wedes-art.com">
+							<svg class="icon icon-wedes">
+								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#wedes"></use>
+							</svg>
+							<span class="sr-only">Web-studio WEDES</span>
+						</a>
+					</div><!-- /.footer__wedes -->
+				</div>
+			</div>
+		</div><!-- /.container -->
+	</footer>
+	
+</div><!-- /.wrapper -->
+
+
+<div class="modal fade" id="callbackForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="btn-close-wrap">
+				<button type="button" class="btn btn-primary btn-block btn-close" data-dismiss="modal" aria-label="Close">
+					<span class="sr-only">Закрити вікно</span>
+					<svg class="icon icon-close">
+						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close-btn"></use>
+					</svg>
+				</button>
+			</div>
+			<div class="contactForm contactForm--modal">
+				<form action="">
+					<div class="modal-header">
+						<div class="modal-title">Форма предварительной записи</div>
+						<div class="modal-subtitle">Экстравагантное лакомство потеснило <br>предыдущего рекордсмена</div>
+					</div>
+					<div class="modal-body">
+						<div class="form-group">
+							<label for="contactForm--modal__service">Послуга:</label>
+							<select name="service" id="contactForm--modal__service" class="form-control select2">
+								<option selected disabled ></option>
+								<option value="val1">Cучасні техніки фарбування</option>
+								<option value="val2">Процедури відновлення структури волосся</option>
+								<option value="val3">Лікування від випадіння волосся</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="contactForm--modal__name">Ваше имя:</label>
+							<input type="text" name="name" class="form-control" id="contactForm--modal__name">
+						</div>
+						<div class="form-group">
+							<label for="contactForm--modal__tel">Ваш телефон:</label>
+							<input type="tel" name="tel" class="form-control" id="contactForm--modal__tel">
+						</div>
+						<div class="form-group">
+							<label for="contactForm--modal__date">Дата:</label>
+							<input type="text" name="date" class="form-control" id="contactForm--modal__date">
+						</div>
+						<div class="form-group">
+							<label for="contactForm--modal__time">Бажаний час:</label>
+							<input type="text" name="time" class="form-control" id="contactForm--modal__time">
+						</div>
+						<div class="form-group">
+							<label for="contactForm--modal__email">Ваш e-mail:</label>
+							<input type="email" name="email" class="form-control" id="contactForm--modal__email">
+						</div>
+						<div class="form-group">
+							<div class="captcha">
+
+								<div class="captcha__title">Защитный код:</div>
+								<div class="captcha__content">
+									<div class="captcha__img-wrap">
+										<img src="images/temp/captcha__img.png" alt="" class="captcha__img">
+									</div>
+									<div class="captcha__input-wrap">
+										<input type="text" class="form-control">
+									</div>
+									<div class="captcha__reload">
+										<button type="button" class="btn btn-primary btn-block btn-reload">
+											<svg class="icon icon-reload">
+												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reload"></use>
+											</svg>
+										</button>
+									</div>
+								</div>
+
+								<div class="captcha__info">Регистр букв для защитного кода значения не имеет</div>
+
+							</div><!-- /.captcha -->
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="submit" class="btn btn-primary">Надіслати</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="hidden">
+	<!--=include svg-sprite.html -->
+</div>
+
+
+	<script src="js/jquery-1.11.3.min.js"></script>
+	<script src="js/libs.min.js"></script>
+	<script src="js/menu.js"></script>
+	<script src="js/scripts.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false" type="text/javascript"></script>
+
+
+</body>
+</html>

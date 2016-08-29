@@ -1,0 +1,144 @@
+.navbar-sidebar{
+	.navbar-brand{
+		font-size: 20px;
+		color: #fff;
+		text-decoration: none;
+		padding-left: 20px;
+	}
+	&-nav{
+		float: none;
+		margin-top: 0;
+		margin-bottom: 20px;
+		> li{
+			float: none;
+			> a{
+				font-size: 18px;
+				line-height: 1.1;
+				border-radius: 5px;
+				text-decoration: none;
+				transition: color $transSpeed, background-color $transSpeed;
+			}
+		}
+	}
+	&--lg-dark &{
+		&-nav{
+			background: $primaryActive;
+			border-radius: 5px;
+			padding-top: 9px;
+			padding-bottom: 9px;
+			> li{
+				padding: 5px 15px;
+				> a{
+					color: #fff;
+					padding-top: 9px;
+					padding-bottom: 9px;
+					padding-right: 50px;
+					text-transform: uppercase;
+					&:hover, &:active, &:focus{
+						color: #3b3833;
+						background: $primary;
+					}
+				}
+				&.active > a{
+					color: #3b3833;
+					background: $primary;
+				}
+			}
+		}
+	}
+	&--lg-light &{
+		&-nav{
+			> li{
+				padding: 2px 0;
+				> a{
+					color: $primaryActive;
+					padding-top: 12px;
+					padding-bottom: 12px;
+					padding-left: 45px;
+					font-weight: bold;
+					&:hover, &:active, &:focus{
+						color: $primaryActive;
+						background: $primary;
+					}
+				}
+				&.active > a{
+					color: $primaryActive;
+					background: $primary;
+				}
+			}
+		}
+	}
+}
+
+
+@include max-screen(1229px){
+	.navbar-sidebar{
+		&--lg-dark &{
+			&-nav{
+				> li{
+					padding-left: 10px;
+					padding-right: 10px;
+					> a{
+						padding-left: 10px;
+						padding-right: 10px;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+@include max-screen(991px){
+	.navbar-sidebar{
+		margin-bottom: 20px;
+		.navbar{
+			&-header{
+				float: none;
+				background: $primaryActive;
+			}
+			&-toggle{
+				display: block;
+				transition: transform 0.5s;
+				&:not(.collapsed){
+					transform: rotate(180deg);
+					filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=4);
+				}
+			}
+			&-collapse.collapse{
+				display: none !important;
+				&.in{
+					display:block !important;
+				}
+			}
+		}
+		& &-nav{
+			padding-top: 9px;
+			padding-bottom: 9px;
+			background: $primaryActive;
+			border-top: 3px solid $primary;
+			border-radius: 0;
+			float: none !important;
+			margin: 0;
+			> li{
+				float: none;
+				padding: 5px 10px;
+				a{
+					color: #fff;
+					padding: 10px;
+					text-transform: uppercase;
+					font-weight: normal;
+					&:hover, &:active, &:focus{
+						color: #3b3833;
+						background: $primary;
+					}
+				}
+				&.active > a{
+					color: #3b3833;
+					background: $primary;
+				}
+			}
+		}
+	}
+
+}

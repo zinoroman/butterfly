@@ -1,0 +1,113 @@
+.icon{
+	vertical-align: middle;
+	transition: all $transSpeed;
+	&-socials{
+		fill: $textLight;
+		&:hover, &.hover,
+		a:hover &, a.hover &{fill: $primaryDarker;}
+		&:active, &.active,
+		a:active &, a.active &{fill: $primaryDarkest;}
+	}
+	&-vk{
+		width: 31.27px;
+		height: 18.03px;
+	}
+	&-fb{
+		width: 12.14px;
+		height: 26.28px;
+	}
+	&-instagram{
+		width: 24.48px;
+		height: 24.46px;
+	}
+	&-google{
+		width: 26.95px;
+		height: 24.06px;
+	}
+	&-wedes{
+		width: 120px;
+		height: 31px;
+		fill: $textLight;
+		&:hover, &.hover{fill: $primaryDarker;}
+		&:active, &.active{fill: $primaryDarkest;}
+	}
+	&-address{
+		width: 17px;
+		height: 24px;
+		fill: $primaryActive;
+	}
+	&-phone{
+		width: 16px;
+		height: 19px;
+		fill: $primaryActive;
+	}
+	&-timetable{
+		width: 25px;
+		height: 23px;
+		fill: $primaryActive;
+	}
+	&-reload{
+		width: 21px;
+		height: 21px;
+		fill: $primaryActive;
+		&:hover, &.hover{fill: #fff;}
+		&:active, &.active{fill: #fff;}
+	}
+	&-service{
+		width: 100px;
+		fill: #aeaeae;
+		a:hover &, a.hover &{fill: $primary;}
+		a:active &, a.active &{fill: $primaryActive;}
+	}
+	&-barber{height: 100%;}
+	&-cosmetology{height: 70%;}
+	&-correction{height: 70%;}
+	&-nail-aesthetics{height: 85%;}
+	&-massage{height: 80%;}
+	&-solarium{height: 100%;}
+	&-arrow{
+		width: 22px;
+		height: 10.5px;
+		fill: #bcbcbc;
+		&:hover, &.hover{fill: $primary;}
+		&:active, &.active{fill: $primaryDarkest;}
+		&--white{
+			&, &:hover, &.hover, &:active, &.active{
+				fill: #fff;
+			}
+		}
+		&--lg{
+			width: 26px;
+			height: 56px;
+		}
+		&--xs{
+			width: 5px;
+			height: 2.625px;
+		}
+		&--right{
+			transform: rotate(180deg);
+		}
+		&--dropdown{
+			transition: transform 0s;
+		}
+	}
+	&-double-arrow{
+		fill: $textLight;
+		width: 30.62px;
+		height: 32.2px;
+		vertical-align: middle;
+		&:hover, &.hover, a:hover &, a.hover &{fill: $primary;}
+		&:active, &.active, a:active &, a.active &{fill: $primaryDarkest;}
+		&--right{
+			transform: rotate(180deg);
+		}
+	}
+	&-close{
+		width: 18px;
+		height: 22px;
+		fill: $primaryActive;
+		vertical-align: -15%;
+		&:hover, &.hover, &:active, &.active{fill: #fff;}
+		button:hover &, button.hover &, button:active &, button.active &{fill: #fff;}
+	}
+}

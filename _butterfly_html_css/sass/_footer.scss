@@ -1,0 +1,23 @@
+.footer{
+	background: #dfe0e0;
+	padding: 30px 0;
+	&__copyright{line-height: 35px;}
+	&__socials{text-align: center;}
+	&__wedes{text-align: right;}
+}
+.socials{
+	margin: 0 -5px;
+	&__item{
+		display: inline-block;
+		min-width: 35px;
+		line-height: 35px;
+		margin: 0 5px;
+	}
+}
+
+@include max-screen(767px){
+	.footer{
+		&__copyright, &__socials, &__wedes{text-align: center; margin-bottom: 15px;}
+		&__wedes{margin-bottom: 0;}
+	}
+}
