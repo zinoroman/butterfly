@@ -26,7 +26,7 @@ gulp.task('connect', function() {
 });
 
 gulp.task('bootstrap', function(){
-	return gulp.src('bower/bootstrap.scss')
+	return gulp.src(path+'/sass/libs/bootstrap.scss')
 	.pipe(sass({outputStyle: 'compressed'}).on('error', swallowError))
 	.pipe(autopref([
 		"Android 2.3",
