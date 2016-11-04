@@ -37,6 +37,19 @@ html, body {
   background: #edeeee;
 }
 
+body {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 100vh;
+}
+
 h1, .h1 {
   font-size: 22px;
   font-weight: bold;
@@ -434,6 +447,19 @@ textarea.form-control {
 .wrapper {
   position: relative;
   z-index: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   overflow: hidden;
 }
 
@@ -454,6 +480,18 @@ textarea.form-control {
 .wrapper__blog {
   padding-top: 65px;
   padding-bottom: 25px;
+}
+
+.wrapper__main {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 100vh;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
 }
 
 @media only screen and (max-width: 1229px) {
@@ -797,12 +835,12 @@ a:active .icon-socials, a.active .icon-socials {
   fill: #c07500;
 }
 
-.icon-vk {
+.icon-vkontakte {
   width: 31.27px;
   height: 18.03px;
 }
 
-.icon-fb {
+.icon-facebook {
   width: 12.14px;
   height: 26.28px;
 }
@@ -812,7 +850,7 @@ a:active .icon-socials, a.active .icon-socials {
   height: 24.46px;
 }
 
-.icon-google {
+.icon-google-plus {
   width: 26.95px;
   height: 24.06px;
 }
@@ -2117,7 +2155,7 @@ button:hover .icon-close, button.hover .icon-close, button:active .icon-close, b
   font-size: 20px;
   font-weight: bold;
   text-transform: none;
-  margin: 5px 0 15px;
+  margin: 15px 0;
 }
 
 .blogPost__time {
@@ -2329,6 +2367,25 @@ button:hover .icon-close, button.hover .icon-close, button:active .icon-close, b
 .quoteSlider__author {
   font-size: 16px;
   text-align: right;
+}
+
+.quoteSlider .slick-slider.slick-initialized .quoteSlider__item {
+  display: block;
+}
+
+.quoteSlider .slick-track {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.quoteSlider__item:not(:first-child) {
+  display: none;
 }
 
 @media only screen and (max-width: 991px) {

@@ -36,7 +36,7 @@ jQuery(document).ready(function($){
 			infinite: true,
 			slidesToShow: 1,
 			slidesToScroll: 1,
-			autoplay: true,
+			autoplay: false,
 			prevArrow: $(blockClass+'__arrow--prev'),
 			nextArrow: $(blockClass+'__arrow--next')
 		});
