@@ -38,7 +38,7 @@
 	$primaryActive: #5d5d5d;
 	$primaryDisabled: #f8f8f8;
 
-	$primaryDarker: #edaa29;
+	$primaryDarker: #edaa29; 
 	$primaryDarkest: #c07500;
 
 	$paginationColor: #595959;
@@ -69,13 +69,14 @@ h3, .h3{font-size: 20px; font-weight: bold; margin: 30px 0 20px;}
 p{margin-bottom: 20px;}
 a{
 	color: inherit;
+	font-weight: inherit;
 	text-decoration: underline;
 	transition: color $transSpeed;
-	&:hover, &.hover{
+	&:hover, &.hover, &:focus, &.focus{
 		color: $primary;
 	}
-	&:active, &.active, &:focus, &.focus{
-		color: inherit;
+	&:active, &.active{
+		color: darken($primary, 5%);
 	}
 }
 .mt-0{margin-top: 0;}
@@ -88,11 +89,11 @@ a{
 .strong--default{color: #fff;}
 
 .btn{
+	padding: 0 23px;
 	text-decoration: none;
 	border-radius: 3px;
 	&-primary{
 		color: $primaryActive;
-		padding: 0 50px;
 		line-height: 40px;
 		text-align: center;
 		background: $primary;
@@ -126,7 +127,6 @@ a{
 		font-size: 16px;
 		line-height: 35px;
 		font-weight: bold;
-		padding: 0 23px;
 		text-transform: uppercase;
 		transition: color $transSpeed, background-color $transSpeed, border-color $transSpeed;
 		&:focus, &.focus{
@@ -175,6 +175,27 @@ a{
 			right: 5px;
 			top: 5px;
 		}
+	}
+	&-collapse {
+		margin-bottom: 30px;
+		@include max-screen(532px) {
+			display: block;
+			width: 100%;
+			padding: 0;
+		}
+	}
+}
+
+.collapse-md {
+	@include min-screen(992px) {
+		display: block !important;
+		height: auto !important;
+	} 
+}
+
+.collapse, .collapsing {
+	.blogSidebar {
+		margin-bottom: 30px;
 	}
 }
 
@@ -369,11 +390,6 @@ textarea.form-control{height: 105px;}
 	overflow: hidden;
 	&__mainSlider{
 		position: relative;
-		top: -140px;
-		z-index: -1;
-	}
-	&__stock--main{
-		margin: -444px 0 0;
 	}
 	&__services{
 		padding-top: 65px;
@@ -442,6 +458,49 @@ textarea.form-control{height: 105px;}
 	.modal{
 		right: auto;
 		width: 320px;
+	}
+}
+
+.groupVertical {
+	display: flex;
+
+	&--middle {
+		align-items: center;
+	}
+
+	&--between {
+		justify-content: space-between;
+	}
+}
+
+.link-phone {
+	text-decoration: none;
+}
+
+.blueimp-gallery  {
+	> .prev, > .next {
+		line-height: 14px;
+		box-sizing: border-box;
+		text-shadow: none;
+	}
+	> .close {
+		> .icon-close-btn {
+			width: 22px;
+			height: 18px;
+			fill: #fff;
+		}
+	}
+	> .prev, > .next, > .close {
+		transition: opacity 200ms;
+	}
+	.icon-arrow {
+		width: 10px;
+		height: 21px;
+		fill: #fff;
+
+		&:hover, &.hover, &:active, &.active {
+			fill: #fff;
+		}
 	}
 }
 

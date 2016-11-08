@@ -3,10 +3,19 @@
 		margin-bottom: 60px;
 	}
 	&__map{
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		width: 100% !important;
 		height: 375px !important;
 		z-index: 1;
 		position: relative;
+	}
+	&__map-loading {
+		color: #616161;
+		font-family: Roboto,Arial,sans-serif;
+		text-align: center;
+		font-size: 24px;
 	}
 }
 
@@ -34,8 +43,8 @@
 
 .feedbackForm{
 	&__title{
+		margin: 0 0 20px;
 		text-transform: uppercase;
-		margin-bottom: 20px;
 		font-size: 20px;
 	}
 	&__submit{

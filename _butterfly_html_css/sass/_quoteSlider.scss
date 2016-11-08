@@ -63,9 +63,15 @@
 
 @include max-screen(768px){
 	.quoteSlider{
-		padding: 50px 0;
+		padding: 40px;
 		&__arrow{
-			display: none !important;
+			transform: scale(.3, .3);
+			&--prev {
+				transform-origin: center left;
+			}
+			&--next {
+				transform-origin: center right;
+			}
 		}
 		&__title{
 			font-size: 18px;
@@ -74,6 +80,19 @@
 		&__author{
 			font-size: 14px;
 			text-align: right;
+		}
+	}
+}
+
+@include max-screen(532px) {
+	.quoteSlider{
+		padding-left: 35px;
+		padding-right: 35px;
+		&__title{
+			font-size: 16px;
+		}
+		&__author {
+			font-size: 14px;
 		}
 	}
 }

@@ -35,33 +35,6 @@
 	&__img{
 		border-radius: 5px 0 0 5px;
 	}
-	&__discount{
-		border-bottom: 66px solid #7a0026;
-		border-left: 66px solid transparent;
-		border-right: 66px solid transparent;
-		height: 0;
-		width: 260px;
-		color: $primary;
-		font-weight: bold;
-		font-size: 45px;
-		text-align: center;
-		line-height: 66px;
-		position: absolute;
-		z-index: 2;
-		right: 0;
-		top: 110px;
-		transform-origin: 100% 100% 0;
-		transform: rotate(45deg);
-		&:before{
-			content: '';
-			position: absolute;
-			left: -66px;
-			top: 66px;
-			border-left: 6px solid transparent;
-			border-right: 6px solid transparent;
-			border-top: 6px solid #4a0017;
-		}
-	}
 	&__content{
 		position: relative;
 		z-index: 1;
@@ -70,34 +43,25 @@
 		color: #fff;
 		&-wrap{
 			position: relative;
-			padding: 25px 0 25px 40px;
+			padding: 25px 25px 25px 40px;
 		}
 	}
-	&--main__content{
-		&-wrap{
-			position: relative;
-			padding: 25px 0 25px 25px;
-		}
-	}
-	&__title{
+	&__subtitle{
 		color: $primary;
 		font-size: 24px;
 		margin-bottom: 20px;
 		font-weight: bold;
 		text-transform: uppercase;
 	}
-	&__subtitle{
+	&__title{
 		font-size: 24px;
+		font-weight: 400;
 		margin-bottom: 15px;
 		text-transform: uppercase;
 	}
 	&__desc{
 		line-height: 22px;
-		min-height: 110px;
 		margin-bottom: 40px;
-	}
-	&--main__desc{
-		padding-right: 120px;
 	}
 	&__duration{
 		color: $primary;
@@ -107,14 +71,30 @@
 	}
 }
 
+.stock--card {
+	&__duration {
+		@include min-screen(1230px) {
+			float: right;
+		}
+	}
+	&__title, &__subtitle {
+		margin-top: 0;
+	}
+}
+
 @include max-screen(1229px){
 	.stock{
-		&--main__desc{padding-right: 100px;}
 		&:before{
 			margin-left: -710px;
 		}
 		&:after{
 			margin-right: -710px;
+		}
+		&__duration{
+			margin-bottom: 15px;
+		}
+		&__wrap {
+			padding: 15px;
 		}
 	}
 }
@@ -133,15 +113,9 @@
 			height: auto;
 		}
 		&__content-wrap{
-			padding: 15px 0;
+			padding: 15px;
 		}
 		&__desc{
-			margin-bottom: 15px;
-		}
-		&--main__desc{
-			padding-right: 45px;
-		}
-		&__duration{
 			margin-bottom: 15px;
 		}
 	}
@@ -172,7 +146,6 @@
 			min-height: 0;
 		}
 		&--main__desc{
-			padding-right: 0;
 			margin-bottom: 20px;
 		}
 		&__duration{
@@ -198,5 +171,20 @@
 		&__img, &__content{
 			border-radius: 0;
 		}
+	}
+}
+
+.stock--full {
+	&__title {
+		margin-bottom: 0;
+	}
+
+	&__duration {
+		margin-bottom: 20px;
+	}
+
+	&__content {
+		margin-top: 20px;
+		margin-bottom: 70px;
 	}
 }

@@ -1,13 +1,16 @@
 .mainSlider{
 	position: relative;
+	height: 0;
+	padding-bottom: 510px;
+	overflow: hidden;
 	z-index: 1;
 	&__container{
 		position: relative;
 	}
 	&__item{
 		display: block;
-		padding-top: 265px;
-		padding-bottom: 520px;
+		height: 0;
+		padding-bottom: 510px;
 		overflow: hidden;
 		position: relative;
 	}
@@ -46,16 +49,40 @@
 			background: linear-gradient(to right, rgba(#fff, 0.3) 0%, rgba(#fff, 0) 100%);
 		}
 	}
-	&__title{
+	&__content {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+	&__content--light {
+		color: #fff;
+	}
+
+	&__content--dark {
 		color: #3b3833;
+	}
+	&__title{
+		max-height: 100px;
 		font-size: 40px;
-		line-height: 1;
+		line-height: 1.2;
 		font-weight: bold;
+		overflow: hidden;
 	}
 	&__subtitle{
-		color: #3b3833;
+		max-height: 108px;
 		font-size: 30px;
+		line-height: 1.2;
 		font-weight: bold;
+		overflow: hidden;
+	}
+	&__title, &__subtitle {
+		&--light {
+			text-shadow: .5px .5px 7px rgba(0, 0, 0, .25);
+		}
+		&--dark {
+			text-shadow: .5px .5px 7px rgba(255, 255, 255, .15);
+		}
 	}
 	&__readmore{
 		margin-top: -20px;
@@ -64,11 +91,14 @@
 	}
 	&__arrow{
 		position: absolute;
-		top: 320px;
+		top: 50%;
 		z-index: 1;
 		border: none;
 		width: 26px;
 		height: 57px;
+		transform: translateY(-50%);
+		background: transparent;
+
 		&--prev{
 			left: 50%;
 			margin-left: -585px;
@@ -101,15 +131,10 @@
 @include max-screen(991px){
 	
 	.mainSlider{
-		&__item{
-			padding-top: 285px;
-			padding-bottom: 130px;
-		}
 		&__img{
 			background-position: center top;
 		}
 		&__arrow{
-			top: 330px;
 			&--prev{
 				margin-left: -360px;
 			}
@@ -123,13 +148,25 @@
 
 @include max-screen(767px){
 	.mainSlider{
-		&__item{
-			padding-top: 285px;
-			padding-bottom: 35px;
-		}
 		&__img{
 			background-position: 70% bottom;
 		}
-		&__arrow{display: none !important;}
+		&__arrow{
+			&--prev{
+				margin-left: -48%;
+			}
+			&--next{
+				margin-right: -48%;
+			}
+			&--prev, &--next {
+				transform: scale(.5, .5);
+			}
+			&--prev {
+				transform-origin: left center;
+			}
+			&--next {
+				transform-origin: right center;
+			}
+		}
 	}
 }

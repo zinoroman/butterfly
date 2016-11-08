@@ -72,7 +72,14 @@ gulp.task('sass', function(){
 });
 
 gulp.task('js-libs', function(){
-	return gulp.src(path+'/js/libs/*.js')
+	return gulp.src([
+			'node_modules/blueimp-gallery/js/blueimp-gallery.js', 
+			'node_modules/blueimp-gallery/js/jquery.blueimp-gallery.js', 
+			'node_modules/blueimp-gallery/js/blueimp-gallery-video.js', 
+			'node_modules/blueimp-gallery/js/blueimp-gallery-vimeo.js', 
+			'node_modules/blueimp-gallery/js/blueimp-gallery-youtube.js', 
+			'node_modules/blueimp-gallery/js/blueimp-gallery-indicator.js', 
+			path+'/js/libs/*.js'])
 	.pipe(concat('libs.min.js'))
 	.pipe(uglify())
 	.pipe(gulp.dest(path+'/js'));
