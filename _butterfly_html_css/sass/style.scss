@@ -151,6 +151,7 @@ a{
 		}
 	}
 	&-sm{
+		height: 34px;
 		font-size: 14px;
 		line-height: 33px;
 	}
@@ -311,15 +312,12 @@ label{
 	font-weight: normal;
 	margin-bottom: 10px;
 }
-.form-group{
-	&--light{margin-bottom: 7px;}
-}
 .form-control{
+	height: 34px;
 	border-radius: 0;
 	border-color: #cbcbcb;
 	background: #dfe0e0;
 	box-shadow: none;
-	height: auto;
 	padding: 7.5px 12px;
 	font-size: 16px;
 	transition: border-color $transSpeed ease-in-out 0s, box-shadow $transSpeed ease-in-out 0s;
@@ -482,6 +480,14 @@ textarea.form-control{height: 105px;}
 		line-height: 14px;
 		box-sizing: border-box;
 		text-shadow: none;
+
+		&:hover, &.hover, 
+		&:focus, &.focus, 
+		&:active, &.active {
+			.icon-arrow {
+				fill: #fff;
+			}
+		}
 	}
 	> .close {
 		> .icon-close-btn {
@@ -497,11 +503,13 @@ textarea.form-control{height: 105px;}
 		width: 10px;
 		height: 21px;
 		fill: #fff;
-
-		&:hover, &.hover, &:active, &.active {
-			fill: #fff;
-		}
 	}
+}
+
+.control-label {
+	font-size: 14px;
+	color: #474747;
+	margin-bottom: 5px;
 }
 
 /* .pagination - начало ---------------------------- */

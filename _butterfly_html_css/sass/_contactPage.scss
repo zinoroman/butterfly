@@ -64,28 +64,25 @@
 		margin: 5px 0 25px;
 	}
 	&__content{
+		display: table;
+		width: 100%;
 		overflow: hidden;
-		margin-left: -8px;
-		margin-right: -8px;
 	}
 	&__img-wrap,
 	&__input-wrap,
 	&__reload{
-		float: left;
+		display: table-cell;
+		vertical-align: middle;
+	}
+	&__img-wrap{
+		width: 200px;
+		background-color: #fff;
+	}
+	&__input-wrap{
 		padding: 0 8px;
 	}
-	&__img-wrap{width: 200px;}
-	&__input-wrap{
-		width: calc(100% - 200px - 56px);
-		&--light{
-			width: calc(100% - 200px - 51px);
-		}
-	}
 	&__reload{
-		width: 56px;
-		&--light{
-			width: 51px;
-		}
+		width: 34px;
 	}
 }
 

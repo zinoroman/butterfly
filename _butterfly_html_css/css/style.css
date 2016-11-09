@@ -186,6 +186,7 @@ a:active, a.active {
 }
 
 .btn-sm {
+  height: 34px;
   font-size: 14px;
   line-height: 33px;
 }
@@ -368,17 +369,13 @@ label {
   margin-bottom: 10px;
 }
 
-.form-group--light {
-  margin-bottom: 7px;
-}
-
 .form-control {
+  height: 34px;
   border-radius: 0;
   border-color: #cbcbcb;
   background: #dfe0e0;
   -webkit-box-shadow: none;
           box-shadow: none;
-  height: auto;
   padding: 7.5px 12px;
   font-size: 16px;
   -webkit-transition: border-color 0.3s ease-in-out 0s, -webkit-box-shadow 0.3s ease-in-out 0s;
@@ -590,6 +587,10 @@ textarea.form-control {
   text-shadow: none;
 }
 
+.blueimp-gallery > .prev:hover .icon-arrow, .blueimp-gallery > .prev.hover .icon-arrow, .blueimp-gallery > .prev:focus .icon-arrow, .blueimp-gallery > .prev.focus .icon-arrow, .blueimp-gallery > .prev:active .icon-arrow, .blueimp-gallery > .prev.active .icon-arrow, .blueimp-gallery > .next:hover .icon-arrow, .blueimp-gallery > .next.hover .icon-arrow, .blueimp-gallery > .next:focus .icon-arrow, .blueimp-gallery > .next.focus .icon-arrow, .blueimp-gallery > .next:active .icon-arrow, .blueimp-gallery > .next.active .icon-arrow {
+  fill: #fff;
+}
+
 .blueimp-gallery > .close > .icon-close-btn {
   width: 22px;
   height: 18px;
@@ -608,8 +609,10 @@ textarea.form-control {
   fill: #fff;
 }
 
-.blueimp-gallery .icon-arrow:hover, .blueimp-gallery .icon-arrow.hover, .blueimp-gallery .icon-arrow:active, .blueimp-gallery .icon-arrow.active {
-  fill: #fff;
+.control-label {
+  font-size: 14px;
+  color: #474747;
+  margin-bottom: 5px;
 }
 
 /* .pagination - начало ---------------------------- */
@@ -1250,6 +1253,10 @@ button:hover .icon-close, button.hover .icon-close, button:active .icon-close, b
   border-left: 8px solid  transparent;
   border-right: 8px solid  transparent;
   border-bottom: 7px solid #fecc00;
+}
+
+.navbar-mega-menu .menu-level-1 > li.has-child {
+  position: static;
 }
 
 .navbar-mega-menu .menu-level-1 > li > a {
@@ -2645,36 +2652,27 @@ button:hover .icon-close, button.hover .icon-close, button:active .icon-close, b
 }
 
 .captcha__content {
+  display: table;
+  width: 100%;
   overflow: hidden;
-  margin-left: -8px;
-  margin-right: -8px;
 }
 
 .captcha__img-wrap, .captcha__input-wrap, .captcha__reload {
-  float: left;
-  padding: 0 8px;
+  display: table-cell;
+  vertical-align: middle;
 }
 
 .captcha__img-wrap {
   width: 200px;
+  background-color: #fff;
 }
 
 .captcha__input-wrap {
-  width: -webkit-calc(100% - 200px - 56px);
-  width: calc(100% - 200px - 56px);
-}
-
-.captcha__input-wrap--light {
-  width: -webkit-calc(100% - 200px - 51px);
-  width: calc(100% - 200px - 51px);
+  padding: 0 8px;
 }
 
 .captcha__reload {
-  width: 56px;
-}
-
-.captcha__reload--light {
-  width: 51px;
+  width: 34px;
 }
 
 @media only screen and (max-width: 991px) {
