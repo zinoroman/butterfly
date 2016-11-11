@@ -52,41 +52,6 @@
 	}
 }
 
-.captcha{
-	&__title{
-		font-size: 14px;
-		color: #474747;
-		margin: 15px 0 7px;
-	}
-	&__info{
-		font-size: 14px;
-		color: #474747;
-		margin: 5px 0 25px;
-	}
-	&__content{
-		display: table;
-		width: 100%;
-		overflow: hidden;
-	}
-	&__img-wrap,
-	&__input-wrap,
-	&__reload{
-		display: table-cell;
-		vertical-align: middle;
-	}
-	&__img-wrap{
-		width: 200px;
-		background-color: #fff;
-	}
-	&__input-wrap{
-		padding: 0 8px;
-	}
-	&__reload{
-		width: 34px;
-	}
-}
-
-
 @include max-screen(991px){
 	.contactPage{
 		&__content{
@@ -106,20 +71,6 @@
 	.contactPage{
 		&__map{
 			height: 200px !important;
-		}
-	}
-}
-
-@include max-screen(549px){
-	.captcha{
-		&__img-wrap{
-			margin-bottom: 15px;
-		}
-		&__input-wrap{
-			width: calc(100% - 56px);
-			&--light{
-				width: calc(100% - 51px);
-			}
 		}
 	}
 }

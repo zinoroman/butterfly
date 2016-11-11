@@ -91,12 +91,12 @@
 	a{text-decoration: none;}
 	.menu-level-1 > li{
 		float: none;
-		position: relative;
+		position: static;
 		padding: 0 5px;
 		width: auto;
 		&:first-child{padding-left: 0;}
 		&:last-child{padding-right: 0;}
-		&.open:before{
+		&.open > a:before{
 			content: '';
 			position: absolute;
 			left: 50%;
@@ -145,16 +145,10 @@
 		border-top: 4px solid $primary;
 		border-radius: 3px;
 		background: $primaryActive;
-		&.open{
-			display: table;
-		}
-		&-nav, &-childs{
-			display: table-cell;
-			vertical-align: top;
-		}
 		&-nav{
 			width: 370px;
 			> li{
+				position:static;
 				padding: 0 0 0 10px;
 				> a{
 					border-radius: 5px;
@@ -175,6 +169,10 @@
 						background: $primary;
 						color: $primaryActive;
 					}
+					.menu-level-3 {
+						background: $documentbg;
+						display: block;
+					}
 				}
 			}
 		}
@@ -183,14 +181,24 @@
 		}
 	}
 
+
 	.menu-level-3{
+		position: absolute;
+		top: 20px;
+		right: 10px;
+		left: 390px;
 		display: none;
 		padding: 20px 15px;
 		border-radius: 5px;
-		&.open{
-			background: $documentbg;
-			display: block;
+
+		@include max-screen(1229px) {
+			left: 320px;
 		}
+
+		@include max-screen(991px) {
+			left: 270px;
+		}
+
 	}
 	.main-items-level-3{
 		position: relative;

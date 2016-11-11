@@ -4,6 +4,11 @@
 	padding-bottom: 510px;
 	overflow: hidden;
 	z-index: 1;
+
+	@include max-screen(768px) {
+		padding-bottom: 350px;
+	}
+
 	&__container{
 		position: relative;
 	}
@@ -13,6 +18,10 @@
 		padding-bottom: 510px;
 		overflow: hidden;
 		position: relative;
+
+		@include max-screen(768px) {
+			padding-bottom: 350px;
+		}
 	}
 	&__img{
 		background-position: center;
@@ -63,11 +72,16 @@
 		color: #3b3833;
 	}
 	&__title{
+		margin-bottom: 10px;
 		max-height: 100px;
 		font-size: 40px;
 		line-height: 1.2;
 		font-weight: bold;
 		overflow: hidden;
+
+		@include max-screen(768px) {
+			font-size: 26px;
+		}
 	}
 	&__subtitle{
 		max-height: 108px;
@@ -75,6 +89,10 @@
 		line-height: 1.2;
 		font-weight: bold;
 		overflow: hidden;
+
+		@include max-screen(768px) {
+			font-size: 19.5px;
+		}
 	}
 	&__title, &__subtitle {
 		&--light {
@@ -131,9 +149,6 @@
 @include max-screen(991px){
 	
 	.mainSlider{
-		&__img{
-			background-position: center top;
-		}
 		&__arrow{
 			&--prev{
 				margin-left: -360px;
@@ -148,9 +163,6 @@
 
 @include max-screen(767px){
 	.mainSlider{
-		&__img{
-			background-position: 70% bottom;
-		}
 		&__arrow{
 			&--prev{
 				margin-left: -48%;

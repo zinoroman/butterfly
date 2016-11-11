@@ -56,7 +56,7 @@
 	&-service{
 		width: 100px;
 		fill: #aeaeae;
-		a:hover &, a.hover &{fill: $primary;}
+		a:hover &, a.hover &, a:focus &, a.focus & {fill: $primary;}
 		a:active &, a.active &{fill: $primaryActive;}
 	}
 	&-barber{height: 100%;}
