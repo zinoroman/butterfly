@@ -89,7 +89,11 @@
 	}
 	&Page{
 		&__img-wrap{
-			margin-bottom: 40px;
+			margin-bottom: 30px;
+
+			@include max-screen(991px) {
+				margin-bottom: 15px;
+			}
 		}
 		&__content{
 			padding-bottom: 30px;

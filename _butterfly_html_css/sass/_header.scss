@@ -96,7 +96,7 @@
 		width: auto;
 		&:first-child{padding-left: 0;}
 		&:last-child{padding-right: 0;}
-		&.open > a:before{
+		&.open > a:before, &.open > span:before{
 			content: '';
 			position: absolute;
 			left: 50%;
@@ -110,7 +110,7 @@
 		&.has-child {
 			position: static;
 		}
-		> a{
+		> a, > span{
 			color: #fff;
 			display: block;
 			font-size: 18px;
@@ -122,7 +122,7 @@
 			transition: color $transSpeed, background-color $transSpeed;
 		}
 		&, &.open, &.active{
-			 > a{
+			 > a, > span{
 			 	&:hover, &:focus, &.active{
 					color: #3b3833;
 					background: $primary;
@@ -130,7 +130,7 @@
 			 }
 		}
 		&.open, &.active{
-			> a{
+			> a, > span{
 				color: #3b3833;
 				background: $primary;
 			}
@@ -150,7 +150,7 @@
 			> li{
 				position:static;
 				padding: 0 0 0 10px;
-				> a{
+				> a, > span{
 					border-radius: 5px;
 					padding: 13px 10px 13px 30px;
 					color: #fff;
@@ -165,7 +165,7 @@
 					}
 				}
 				&.open, &.active{
-					> a{
+					> a, > span{
 						background: $primary;
 						color: $primaryActive;
 					}
@@ -205,7 +205,7 @@
 		list-style-type: none;
 		margin: 0;
 		> li{
-			> a{
+			> a, > span{
 				display: block;
 				position: relative;
 				padding: 10px 15px 10px 45px;
@@ -233,7 +233,7 @@
 				}
 			}
 			&.active{
-				> a{
+				> a, > span{
 					color: #fff;
 					background: $primaryActive;
 				}
@@ -257,7 +257,7 @@
 		min-width: auto;
 		width: 100%;
 		> li{
-			> a{
+			> a, > span{
 				color: #fff;
 				font-size: 14px;
 				font-weight: bold;
@@ -301,7 +301,7 @@
 		list-style-type: none;
 		margin: 0;
 		li{
-			a{
+			a, > span{
 				display: block;
 				padding: 13px 15px;
 				color: #fff;
@@ -319,7 +319,7 @@
 				}
 			}
 			&.active{
-				> a{
+				> a, > span{
 					border-color: #fff;
 					background: $primary;
 					color: $primaryActive;
@@ -328,7 +328,7 @@
 			> ul{
 				border-top: 1px solid $primaryActive;
 				> li{
-					> a{
+					> a, > span{
 						padding-left: 30px;
 						position: relative;
 						&:before{
@@ -349,7 +349,7 @@
 						padding-bottom: 10px;
 						border: none;
 						> li{
-							> a{
+							> a, > span{
 								background-color: transparent;position: relative;
 								padding: 10px 15px 10px 45px;
 								font-size: 16px;
@@ -376,7 +376,7 @@
 								}
 							}
 							&.active{
-								a{
+								> a, > span{
 									color: #fff;
 									background: $primaryActive;
 								}
@@ -395,26 +395,35 @@
 @include max-screen(1229px){
 
 	.navbar-mega-menu{
-		margin-left: 15px;
 		.menu-level-1 > li{
 			padding: 0 5px;
 			&.open:before{
 				margin-top: 19px;
 			}
-			> a{
+			> a, > span{
 				padding: 0 10px;
 			}
 		}
 		.menu-level-2-nav{
 			width: 300px;
-			> li > a{
+			> li > a, > li > span{
 				font-size: 15px;
 				padding-left: 20px;
 				padding-right: 20px;
 			}
 		}
-		.main-items-level-3 > li > a{
+		.main-items-level-3 > li > a, .main-items-level-3 > li > span{
 			font-size: 14px;
+		}
+	}
+
+
+	.navbar{
+		> .container{
+			.navbar-brand{
+				margin-top: 20px;
+				width: 270px;
+			}
 		}
 	}
 
@@ -425,20 +434,21 @@
 	.navbar{
 		> .container{
 			.navbar-brand{
-				width: 300px;
+				margin-top: 13px;
+				width: 240px;
 			}
 		}
 		&-language{top: 41px;}
 	}
 
 	.navbar-mega-menu{
-		margin: 43px 0 0 15px;
+		margin: 43px 0 0 35px;
 		.menu-level-1 > li{
 			padding: 0 1px;
 			&.open:before{
 				margin-top: 11px;
 			}
-			> a{
+			> a, > span{
 				padding: 0 6px;
 				line-height: 25px;
 				font-size: 16px;
@@ -446,12 +456,12 @@
 		}
 		.menu-level-2-nav{
 			width: 250px;
-			> li > a{
+			> li > a, > li > span{
 				font-size: 14px;
 				padding: 10px;
 			}
 		}
-		.main-items-level-3 > li > a{
+		.main-items-level-3 > li > a, .main-items-level-3 > li > span{
 			font-size: 13px;
 		}
 	}
@@ -485,7 +495,7 @@
 		float: right;
 		.dropdown-menu{
 			> li{
-				> a{border: none;}
+				> a, > span{border: none;}
 			}
 		}
 		.btn-language{border: none;}

@@ -54,12 +54,24 @@
 					color: $primaryActive;
 					padding-top: 12px;
 					padding-bottom: 12px;
-					padding-left: 45px;
 					font-weight: bold;
 					&:hover, &:active, &:focus{
 						color: $primaryActive;
 						background: $primary;
 					}
+				}
+				&.active > a{
+					color: $primaryActive;
+					background: $primary;
+				}
+			}
+		}
+	}
+	&--collapse &{
+		&-nav{
+			> li{
+				> a{
+					padding-left: 45px;
 				}
 				&.active > a{
 					color: $primaryActive;
@@ -90,7 +102,7 @@
 
 
 @include max-screen(991px){
-	.navbar-sidebar{
+	.navbar-sidebar--collapse{
 		margin-bottom: 20px;
 		.navbar{
 			&-header{
@@ -98,12 +110,29 @@
 				background: $primaryActive;
 			}
 			&-toggle{
+				float: none;
 				display: block;
+				width: 100%;
+				padding-left: 15px;
+				padding-right: 15px;
 				transition: transform 0.5s;
-				&:not(.collapsed){
-					transform: rotate(180deg);
-					filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=4);
+
+				.icon-arrow--down {
+					position: absolute;
+					top: 50%;
+					right: 15px;
+					transform: translateY(-50%);
 				}
+				&:not(.collapsed){
+					.icon-arrow--down {
+						transform: rotate(180deg) translateY(53%);
+						filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=4);
+					}
+				}
+			}
+			&-brand {
+				height: auto;
+				padding: 0;
 			}
 			&-collapse.collapse{
 				display: none !important;

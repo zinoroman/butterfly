@@ -27,11 +27,6 @@
 		margin-right: -825px;
 		transform: scale(-1,1);
 	}
-	&--main__wrap{
-		position: relative;
-		top: 20px;
-		margin-top: -55px;
-	}
 	&__img{
 		border-radius: 5px 0 0 5px;
 	}
@@ -69,6 +64,9 @@
 		padding-left: 40px;
 		background: url(../images/svg/delay.svg) left center no-repeat;
 	}
+	&__wrap {
+		padding: 15px;
+	}
 }
 
 .stock--card {
@@ -92,9 +90,6 @@
 		}
 		&__duration{
 			margin-bottom: 15px;
-		}
-		&__wrap {
-			padding: 15px;
 		}
 	}
 }
