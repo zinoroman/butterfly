@@ -519,6 +519,25 @@ textarea.form-control{height: 105px;}
 	font-size: 14px;
 }
 
+a,
+[role="button"] {
+	img {
+		transition: color 300ms, opacity 300ms;
+	}
+
+	&:hover, &:focus {
+		img {
+			opacity: .9;
+		}
+	}
+
+	&:active {
+		img {
+			opacity: .85;
+		}
+	}
+}
+
 /* .pagination - начало ---------------------------- */
 @import "pagination";
 /* .pagination - конец ---------------------------- */

@@ -617,6 +617,24 @@ textarea.form-control {
   font-size: 14px;
 }
 
+a img,
+[role="button"] img {
+  -webkit-transition: color 300ms, opacity 300ms;
+  -o-transition: color 300ms, opacity 300ms;
+  transition: color 300ms, opacity 300ms;
+}
+
+a:hover img, a:focus img,
+[role="button"]:hover img,
+[role="button"]:focus img {
+  opacity: .9;
+}
+
+a:active img,
+[role="button"]:active img {
+  opacity: .85;
+}
+
 /* .pagination - начало ---------------------------- */
 .pagination {
   display: block;
@@ -885,7 +903,7 @@ textarea.form-control {
   .navbar-sidebar--collapse .navbar-collapse.collapse.in {
     display: block !important;
   }
-  .navbar-sidebar--collapse .navbar-sidebar--collapse-nav {
+  .navbar-sidebar--collapse .nav {
     padding-top: 9px;
     padding-bottom: 9px;
     background: #5d5d5d;
@@ -894,21 +912,21 @@ textarea.form-control {
     float: none !important;
     margin: 0;
   }
-  .navbar-sidebar--collapse .navbar-sidebar--collapse-nav > li {
+  .navbar-sidebar--collapse .nav > li {
     float: none;
     padding: 5px 10px;
   }
-  .navbar-sidebar--collapse .navbar-sidebar--collapse-nav > li a {
+  .navbar-sidebar--collapse .nav > li a {
     color: #fff;
     padding: 10px;
     text-transform: uppercase;
     font-weight: normal;
   }
-  .navbar-sidebar--collapse .navbar-sidebar--collapse-nav > li a:hover, .navbar-sidebar--collapse .navbar-sidebar--collapse-nav > li a:active, .navbar-sidebar--collapse .navbar-sidebar--collapse-nav > li a:focus {
+  .navbar-sidebar--collapse .nav > li a:hover, .navbar-sidebar--collapse .nav > li a:active, .navbar-sidebar--collapse .nav > li a:focus {
     color: #3b3833;
     background: #fecc00;
   }
-  .navbar-sidebar--collapse .navbar-sidebar--collapse-nav > li.active > a {
+  .navbar-sidebar--collapse .nav > li.active > a {
     color: #3b3833;
     background: #fecc00;
   }
@@ -2325,6 +2343,8 @@ button:hover .icon-close, button.hover .icon-close, button:active .icon-close, b
   padding-right: 35px;
   line-height: 35px;
   background: url(../images/svg/datepicker.svg) right center no-repeat;
+  -webkit-background-size: 23px 23px;
+          background-size: 23px 23px;
   float: right;
 }
 
