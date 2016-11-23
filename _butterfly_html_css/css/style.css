@@ -300,18 +300,21 @@ a:active, a.active {
   text-transform: none;
 }
 
-.list-default, .post ul:not(.dropdown-menu) {
-  margin: 40px 0 55px;
+.list-default,
+ul:not([class]) {
+  margin: 0 0 20px;
   list-style-type: none;
 }
 
-.list-default > li, .post ul:not(.dropdown-menu) > li {
+.list-default > li,
+ul:not([class]) > li {
   line-height: 24px;
   padding-left: 20px;
   position: relative;
 }
 
-.list-default > li:before, .post ul:not(.dropdown-menu) > li:before {
+.list-default > li:before,
+ul:not([class]) > li:before {
   content: '';
   background: #5d5d5d;
   width: 5px;
@@ -1140,6 +1143,26 @@ button:hover .icon-close, button.hover .icon-close, button:active .icon-close, b
 
 /* .svg-icons - конец ---------------------------- */
 /* .header - начало ---------------------------- */
+@media only screen and (min-width: 768px) {
+  .navbar-main > .container {
+    display: table;
+  }
+  .navbar-main > .container:before, .navbar-main > .container:after {
+    content: none;
+  }
+  .navbar-main .navbar-header {
+    display: table-cell;
+    margin: 0;
+    vertical-align: bottom;
+  }
+  .navbar-mega-menu {
+    display: table-cell;
+    width: 100%;
+    vertical-align: bottom;
+    padding-bottom: 20px;
+  }
+}
+
 .navbar {
   border: none;
   border-radius: 0;
@@ -1265,12 +1288,29 @@ button:hover .icon-close, button.hover .icon-close, button:active .icon-close, b
 }
 
 .navbar-mega-menu {
-  margin: 52px 0 0 70px;
-  float: left;
+  padding-left: 50px;
 }
 
 .navbar-mega-menu a {
   text-decoration: none;
+}
+
+.navbar-mega-menu .nav > li > a {
+  -webkit-transition: color 300ms, background-color 300ms;
+  -o-transition: color 300ms, background-color 300ms;
+  transition: color 300ms, background-color 300ms;
+}
+
+@media only screen and (max-width: 1229px) {
+  .navbar-mega-menu .nav > li > .dropdown-menu.menu-level-2 {
+    margin-top: 15px;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .navbar-mega-menu .nav > li > .dropdown-menu.menu-level-2 {
+    margin-top: 11px;
+  }
 }
 
 .navbar-mega-menu .menu-level-1 > li {
@@ -1305,13 +1345,20 @@ button:hover .icon-close, button.hover .icon-close, button:active .icon-close, b
 }
 
 .navbar-mega-menu .menu-level-1 > li > a, .navbar-mega-menu .menu-level-1 > li > span {
-  color: #fff;
-  display: block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   font-size: 18px;
-  line-height: 36px;
+  min-height: 40px;
   text-align: center;
-  padding: 0 18px 2px;
+  padding: 0 18px;
   border-radius: 5px;
+  color: #fff;
   text-transform: uppercase;
   -webkit-transition: color 0.3s, background-color 0.3s;
   -o-transition: color 0.3s, background-color 0.3s;
@@ -1361,6 +1408,7 @@ button:hover .icon-close, button.hover .icon-close, button:active .icon-close, b
 .navbar-mega-menu .menu-level-2-nav > li > a:hover, .navbar-mega-menu .menu-level-2-nav > li > a:focus, .navbar-mega-menu .menu-level-2-nav > li > a:active, .navbar-mega-menu .menu-level-2-nav > li > span:hover, .navbar-mega-menu .menu-level-2-nav > li > span:focus, .navbar-mega-menu .menu-level-2-nav > li > span:active {
   border-color: #fff;
   background: #fecc00;
+  color: #5d5d5d;
 }
 
 .navbar-mega-menu .menu-level-2-nav > li.open > a, .navbar-mega-menu .menu-level-2-nav > li.open > span, .navbar-mega-menu .menu-level-2-nav > li.active > a, .navbar-mega-menu .menu-level-2-nav > li.active > span {
@@ -1445,7 +1493,19 @@ button:hover .icon-close, button.hover .icon-close, button:active .icon-close, b
 .navbar-language {
   position: absolute;
   right: 15px;
-  top: 54px;
+  top: 48%;
+}
+
+@media only screen and (max-width: 1229px) {
+  .navbar-language {
+    top: 38%;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .navbar-language {
+    top: 37%;
+  }
 }
 
 .navbar-language .dropdown-menu {
@@ -1469,7 +1529,7 @@ button:hover .icon-close, button.hover .icon-close, button:active .icon-close, b
   text-transform: uppercase;
   border: 1px solid #6c6c6c;
   border-top: none;
-  padding: 4px 13px 4px 9px;
+  padding: 9px 15px 9px 8px;
 }
 
 .btn-language {
@@ -1479,7 +1539,8 @@ button:hover .icon-close, button.hover .icon-close, button:active .icon-close, b
   font-size: 14px;
   font-weight: bold;
   color: #fff;
-  padding: 4px 13px 4px 9px;
+  border-width: 1px;
+  padding: 0 15px 0 8px;
   position: relative;
 }
 
@@ -1488,7 +1549,6 @@ button:hover .icon-close, button.hover .icon-close, button:active .icon-close, b
   right: 5px;
   top: 0;
   bottom: 0;
-  padding-top: 2px;
 }
 
 .btn-language[aria-expanded=true] .icon-arrow--dropdown {
@@ -1505,6 +1565,15 @@ button:hover .icon-close, button.hover .icon-close, button:active .icon-close, b
 .navbar-accordion-menu ul {
   list-style-type: none;
   margin: 0;
+}
+
+.navbar-accordion-menu ul li {
+  padding-left: 0;
+  line-height: 1.2;
+}
+
+.navbar-accordion-menu ul li:before {
+  content: none;
 }
 
 .navbar-accordion-menu ul li a, .navbar-accordion-menu ul li > span {
@@ -1598,6 +1667,10 @@ button:hover .icon-close, button.hover .icon-close, button:active .icon-close, b
 }
 
 @media only screen and (max-width: 1229px) {
+  .navbar-mega-menu {
+    padding-left: 40px;
+    padding-bottom: 6px;
+  }
   .navbar-mega-menu .menu-level-1 > li {
     padding: 0 5px;
   }
@@ -1619,21 +1692,17 @@ button:hover .icon-close, button.hover .icon-close, button:active .icon-close, b
     font-size: 14px;
   }
   .navbar > .container .navbar-brand {
-    margin-top: 20px;
     width: 270px;
   }
 }
 
 @media only screen and (max-width: 991px) {
   .navbar > .container .navbar-brand {
-    margin-top: 13px;
     width: 240px;
   }
-  .navbar-language {
-    top: 41px;
-  }
   .navbar-mega-menu {
-    margin: 43px 0 0 35px;
+    padding-left: 30px;
+    padding-bottom: 4px;
   }
   .navbar-mega-menu .menu-level-1 > li {
     padding: 0 1px;

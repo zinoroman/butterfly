@@ -1,3 +1,20 @@
+var mainMenuOptions;
+
+if ('ontouchstart' in window) {
+    mainMenuOptions = {
+        secondLevel: {
+            hoverDelay: 0
+        }
+    }
+}
+else {
+    mainMenuOptions = {
+        secondLevel: {
+            hoverDelay: 250
+        }
+    }
+}
+
 var MainMenu = function (options) {
 
     //Contants
@@ -6,6 +23,8 @@ var MainMenu = function (options) {
         THIRD_LEVEL_HIDDEN: 'mainMenu.level3.hidden',
         THIRD_LEVEL_SHOWN: 'mainMenu.level3.shown'
     }
+
+    var IS_TOUCH = 'ontouchstart' in window;
 
     //DOM Objects
     var level2Wrapper = $('.menu-level-2');
@@ -18,13 +37,27 @@ var MainMenu = function (options) {
 
     function initFirstLevel() {
         $('.menu-level-1 > li')
-            .on('shown.bs.dropdown', function () {
+            .on('shown.bs.dropdown', function (event) {
                 //Show the first nested menu (3 level)
-                level2Li
-                    .first()
-                        .addClass('open');
+
+                var visibleLevel2Li = level2Li.filter(':visible');
+
+                if (!visibleLevel2Li.hasClass('open') && !visibleLevel2Li.hasClass('active')) {
+                    var currentActiveLi = visibleLevel2Li.filter('[data-active="true"]');
+                    var futureActiveLi;
+
+                    if (currentActiveLi.length) {
+                        futureActiveLi = currentActiveLi;
+                    }
+                    else {
+                        futureActiveLi = visibleLevel2Li.first();
+                    }
+
+                    futureActiveLi.addClass('open');
+                }
 
                 recalcHeightOfSecondLevel();
+
             });
     }
 
@@ -59,11 +92,14 @@ var MainMenu = function (options) {
                     
                     target
                         .siblings()
-                            .removeClass('open');
+                            .removeClass('open')
+                            .removeClass('active')
+                            .attr('data-active', false);
 
                     if (target.find('.dropdown-menu').length) {
                         target
-                            .addClass('open');
+                            .addClass('open')
+                            .attr('data-active', true);
                     }
 
                     recalcHeightOfSecondLevel();
@@ -71,7 +107,16 @@ var MainMenu = function (options) {
                     }, options.secondLevel.hoverDelay);
             }, function () {
                 clearTimeout(hoverTimeout);
-            });
+            })
+            .find('> a')
+                .click(function (event) {
+                    //Prevent closing of dropdown menu when user clicks on link in second level menu
+                    event.stopPropagation();
+
+                    if (IS_TOUCH) {
+                        event.preventDefault();
+                    }
+                });
     }
 
     function recalcHeightOfSecondLevel() {
@@ -82,11 +127,9 @@ var MainMenu = function (options) {
 
     init();
 
-}({
-    secondLevel: {
-        hoverDelay: 250
-    }
-});
+}(mainMenuOptions);
+
+
 
 $('.navbar-accordion-menu > ul ul').each(function () {
     var fn_close = function (a) {

@@ -1,3 +1,29 @@
+@include min-screen(768px) {
+	.navbar-main {
+		> .container {
+			display: table;
+
+			&:before,
+			&:after {
+				content: none;
+			}
+		}
+
+		.navbar-header {
+			display: table-cell;
+			margin: 0;
+			vertical-align: bottom;
+		}
+	}
+
+	.navbar-mega-menu {
+		display: table-cell;
+		width: 100%;
+		vertical-align: bottom;
+		padding-bottom: 20px;
+	}
+}
+
 .header{
 }
 	.navbar{
@@ -86,9 +112,19 @@
 	}
 
 .navbar-mega-menu{
-	margin: 52px 0 0 70px;
-	float: left;
+	padding-left: 50px;
 	a{text-decoration: none;}
+	.nav > li > a{
+		transition: color 300ms, background-color 300ms;
+	}
+	.nav > li > .dropdown-menu.menu-level-2 {
+		@include max-screen(1229px) {
+			margin-top: 15px;
+		}
+		@include max-screen(991px) {
+			margin-top: 11px;
+		}
+	}
 	.menu-level-1 > li{
 		float: none;
 		position: static;
@@ -111,13 +147,14 @@
 			position: static;
 		}
 		> a, > span{
-			color: #fff;
-			display: block;
+			display: flex;
+			align-items: center;
 			font-size: 18px;
-			line-height: 36px;
+			min-height: 40px;
 			text-align: center;
-			padding: 0 18px 2px;
+			padding: 0 18px;
 			border-radius: 5px;
+			color: #fff;
 			text-transform: uppercase;
 			transition: color $transSpeed, background-color $transSpeed;
 		}
@@ -162,6 +199,7 @@
 					&:hover, &:focus, &:active{
 						border-color: #fff;
 						background: $primary;
+						color: $primaryActive;
 					}
 				}
 				&.open, &.active{
@@ -247,7 +285,13 @@
 .navbar-language{
 	position: absolute;
 	right: 15px;
-	top: 54px;
+	top: 48%;
+	@include max-screen(1229px) {
+		top: 38%;
+	}
+	@include max-screen(991px) {
+		top: 37%;
+	}
 	.dropdown-menu{
 		margin: -3px 0 0;
 		padding: 0;
@@ -268,11 +312,12 @@
 				text-transform: uppercase;
 				border: 1px solid #6c6c6c;
 				border-top: none;
-				padding: 4px 13px 4px 9px;
+				padding: 9px 15px 9px 8px;
 			}
 		}
 	}
 }
+
 .btn-language{
 	text-transform: uppercase;
 	border-color: #6c6c6c;
@@ -280,14 +325,14 @@
 	font-size: 14px;
 	font-weight: bold;
 	color: #fff;
-	padding: 4px 13px 4px 9px;
+	border-width: 1px;
+	padding: 0 15px 0 8px;
 	position: relative;
 	.dropdown-arrow{
 		position: absolute;
 		right: 5px;
 		top: 0;
 		bottom: 0;
-		padding-top: 2px;
 	}
 	&[aria-expanded=true]{
 		.icon-arrow--dropdown{
@@ -301,6 +346,11 @@
 		list-style-type: none;
 		margin: 0;
 		li{
+			padding-left: 0;
+			line-height: 1.2;
+			&:before {
+				content: none;
+			}
 			a, > span{
 				display: block;
 				padding: 13px 15px;
@@ -395,6 +445,8 @@
 @include max-screen(1229px){
 
 	.navbar-mega-menu{
+		padding-left: 40px;
+		padding-bottom: 6px;
 		.menu-level-1 > li{
 			padding: 0 5px;
 			&.open:before{
@@ -421,7 +473,6 @@
 	.navbar{
 		> .container{
 			.navbar-brand{
-				margin-top: 20px;
 				width: 270px;
 			}
 		}
@@ -434,15 +485,14 @@
 	.navbar{
 		> .container{
 			.navbar-brand{
-				margin-top: 13px;
 				width: 240px;
 			}
 		}
-		&-language{top: 41px;}
 	}
 
 	.navbar-mega-menu{
-		margin: 43px 0 0 35px;
+		padding-left: 30px;
+		padding-bottom: 4px;
 		.menu-level-1 > li{
 			padding: 0 1px;
 			&.open:before{
